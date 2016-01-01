@@ -12,6 +12,14 @@
     <%= @post.body %>
   </li>
 
+  <li>
+    <%= render "comment_form.html", post: @post, changeset: @changeset,
+                                    action: post_post_path(@conn, :add_comment, @post) %>
+  </li>
+
+  <li>
+    <%= render "comments.html", post: @post %>
+  </li>
 </ul>
 
 <%= link "Edit", to: post_path(@conn, :edit, @post) %>
